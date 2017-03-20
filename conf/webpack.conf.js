@@ -35,7 +35,31 @@ module.exports = {
         exclude: /node_modules/,
         loaders: [
           'react-hot-loader',
-          'ts-loader'
+          'ts-loader?transpileOnly=true'
+        ]
+      },
+      {
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        loaders: [
+          'url-loader?limit=10000&mimetype=application/font-woff'
+        ]
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loaders: [
+          'url-loader?limit=10000&mimetype=application/octet-stream'
+        ]
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loaders: [
+          'file-loader'
+        ]
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loaders: [
+          'url-loader?limit=10000&mimetype=image/svg+xml'
         ]
       }
     ]

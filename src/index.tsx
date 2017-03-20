@@ -1,14 +1,19 @@
+import 'babel-polyfill';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Router, Route, browserHistory} from 'react-router';
-
-import {Hello} from './app/hello';
+import { Provider } from 'react-redux';
+import App from './app/containers/App/index';
+import configureStore from './app/store/configureStore';
+import { Router, Route, browserHistory } from 'react-router';
 
 import './index.less';
+const store: any = configureStore({});
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path='/' component={Hello}/>
-  </Router>,
+  <Provider store={store}>
+     <Router history={browserHistory}>
+        <Route path='/' component={App} />
+     </Router>
+  </Provider>,
   document.getElementById('root')
 );

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "isolatedModules": true,
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
